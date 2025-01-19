@@ -1,0 +1,6 @@
+CREATE TABLE Scores (
+    ID INTEGER PRIMARY KEY,
+    TotalScore INTEGER NOT NULL
+);
+
+INSERT INTO Scores (TotalScore) VALUES (0);
