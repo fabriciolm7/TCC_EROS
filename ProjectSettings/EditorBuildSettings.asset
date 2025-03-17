@@ -12,60 +12,72 @@ EditorBuildSettings:
     path: Assets/Scenes/FasesFuncionais/lvl_1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/LevelComplete_1.unity
-    guid: e4637287a24f68546b2e04dc7c5f670d
-  - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_2.unity
     guid: fd70433db6b66164d88def9e637dbae7
-  - enabled: 1
-    path: Assets/Scenes/LevelComplete_2.unity
-    guid: b431d1dc3607d544b94b5a2264d568cf
   - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_3.unity
     guid: d85896a70b4cf4840b32e3dd0a5f9748
   - enabled: 1
-    path: Assets/Scenes/LevelComplete_3.unity
-    guid: 24cbc13647bdbb34ebb87456c2e209ae
-  - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_4.unity
     guid: 320f4fdd53076424c87d8e4ee64c94f9
   - enabled: 1
-    path: Assets/Scenes/LevelComplete_4.unity
-    guid: 3953987bf437b43459195169ee037ac8
+    path: Assets/Scenes/FasesFuncionais/lvl_5.unity
+    guid: 030a6ee8576d45941b614932cfbccdee
   - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_6.unity
     guid: c64e5d20069905248a4d26d12cfa89dc
   - enabled: 1
+    path: Assets/Scenes/FasesFuncionais/lvl_7.unity
+    guid: 438ad78ea2e62cb42be1d73894fe9662
+  - enabled: 1
+    path: Assets/Scenes/FasesFuncionais/lvl_8.unity
+    guid: 2c804024a8a6b724cb28a63671e608c2
+  - enabled: 1
+    path: Assets/Scenes/FasesFuncionais/lvl_9.unity
+    guid: c355ccc962af1d546b1dd607983ceb76
+  - enabled: 0
+    path: Assets/Scenes/LevelComplete_1.unity
+    guid: e4637287a24f68546b2e04dc7c5f670d
+  - enabled: 0
+    path: Assets/Scenes/LevelComplete_2.unity
+    guid: b431d1dc3607d544b94b5a2264d568cf
+  - enabled: 0
+    path: Assets/Scenes/LevelComplete_3.unity
+    guid: 24cbc13647bdbb34ebb87456c2e209ae
+  - enabled: 0
+    path: Assets/Scenes/LevelComplete_4.unity
+    guid: 3953987bf437b43459195169ee037ac8
+  - enabled: 0
     path: Assets/Scenes/LevelComplete_5.unity
     guid: 71b6940d41bfa2e409133f5a5abec932
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/lvl_6.unity
     guid: c0a148a79996bf0439d79c98f2371952
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/lvl_7.unity
     guid: 398d113813b49bb47a3a5d32e51422a5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/lvl_8.unity
     guid: cb9daf36f5386514799069bb30fb880d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/lvl_9.unity
     guid: 74acc18d40b9f4a4ebe2f39c069d5083
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/lvl_10.unity
     guid: 7124000af5e4e8f418800f574d5dee39
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/credits.unity
     guid: edd5176490a2e4d488597ef07aee2e5a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelComplete_6.unity
     guid: de381439f96600943a37310a186f0680
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelComplete_7.unity
     guid: 2b0fd94e2ec6d584385880ff432694de
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelComplete_8.unity
     guid: a26fdb357f498de48a24cf34a5125a10
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LevelComplete_9.unity
     guid: 4f8f88c30ac2c204bbb3e34f30455b52
   m_configObjects: {}
