@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class BossAI : MonoBehaviour
@@ -8,10 +8,10 @@ public class BossAI : MonoBehaviour
     private AudioSource audioSource;
 
     public Transform firePoint;      // Ponto de tiro
-    public GameObject bulletPrefab;  // Prefab do projétil
+    public GameObject bulletPrefab;  // Prefab do projï¿½til
     public float fireRate = 1f;      // Tempo entre tiros
     public AudioClip attackSound;    // Som de ataque
-    public AudioClip destroySound;   // Som de destruição
+    public AudioClip destroySound;   // Som de destruiï¿½ï¿½o
 
     [SerializeField]
     private Transform DetectaChao;
