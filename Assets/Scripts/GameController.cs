@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     public TextMeshProUGUI scoreText;
     public GameObject gameOver;
+    public static int totalStrawberriesCollected = 0;
 
     void Awake()
     {
@@ -41,6 +42,10 @@ public class GameController : MonoBehaviour
     public void doExitGame()
     {
         Application.Quit();
+    }
+     public void AddStrawberry()
+    {
+        totalStrawberriesCollected++;
     }
 }
 

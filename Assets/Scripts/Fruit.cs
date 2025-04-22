@@ -6,8 +6,8 @@ public class Strawberry : MonoBehaviour
 {
     private SpriteRenderer sr;
     private CircleCollider2D circle;
-    public GameObject collected; // Objeto que será ativado quando o morango for coletado
-    public int score; // Pontuação obtida ao coletar o morango
+    public GameObject collected; // Objeto que serï¿½ ativado quando o morango for coletado
+    public int score; // Pontuaï¿½ï¿½o obtida ao coletar o morango
 
     private AudioSource audioSource;
 
@@ -20,7 +20,7 @@ public class Strawberry : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource não encontrado no objeto do morango!");
+            Debug.LogError("AudioSource nï¿½o encontrado no objeto do morango!");
         }
     }
 
@@ -38,17 +38,18 @@ public class Strawberry : MonoBehaviour
                 collected.SetActive(true);
             }
 
-            // Toca o áudio se o AudioSource estiver configurado
+            // Toca o ï¿½udio se o AudioSource estiver configurado
             if (audioSource != null && audioSource.clip != null)
             {
                 audioSource.Play();
             }
 
-            // Atualiza a pontuação
+            // Atualiza a pontuaï¿½ï¿½o
             GameController.instance.totalScore += score;
             GameController.instance.UpdateScore();
+            GameController.instance.AddStrawberry();
 
-            // Destroi o objeto após o término do áudio ou após um pequeno atraso
+            // Destroi o objeto apï¿½s o tï¿½rmino do ï¿½udio ou apï¿½s um pequeno atraso
             Destroy(gameObject, audioSource != null ? audioSource.clip.length : 0.25f);
         }
     }
