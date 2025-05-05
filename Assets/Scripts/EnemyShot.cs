@@ -27,13 +27,17 @@ public class BossAI : MonoBehaviour
     private float nextFireTime = 0f;
     private Transform player;
 
+    public int maxHealth = 100;
+    private int currentHealth;
+    public AudioClip hitSound; 
+
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-
+        currentHealth = maxHealth;
         anim.Play("boss_idle");
     }
 
@@ -96,6 +100,24 @@ public class BossAI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isChasing = true;
+            if (other.transform.position.y > transform.position.y + 0.5f)
+            {
+                // Aplica dano ao boss
+                HealthBossScript healthScript = GetComponent<HealthBossScript>();
+                if (healthScript != null)
+                {
+                    anim.SetTrigger("Hit");
+                    anim.Play("boss_hit");
+                    healthScript.TakeDamage(1);
+                }
+
+                // Dá um impulso vertical no jogador
+                Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, 10f);
+                }
+            }
         }
     }
 
