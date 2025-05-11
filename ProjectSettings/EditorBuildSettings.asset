@@ -12,4 +12,24 @@ EditorBuildSettings:
     path: Assets/Scenes/FasesFuncionais/lvl_1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/FasesFuncionais/lvl_2.unity
+    guid: fd70433db6b66164d88def9e637dbae7
+  - enabled: 1
+    path: Assets/Scenes/FasesFuncionais/lvl_3.unity
+    guid: d85896a70b4cf4840b32e3dd0a5f9748
+  - enabled: 1
+    path: Assets/Scenes/FasesFuncionais/lvl_4.unity
+    guid: 320f4fdd53076424c87d8e4ee64c94f9
+  - enabled: 1
+    path: Assets/Scenes/FasesFuncionais/lvl_5.unity
+    guid: 030a6ee8576d45941b614932cfbccdee
+  - enabled: 1
+    path: Assets/Scenes/FasesFuncionais/lvl_6.unity
+    guid: c64e5d20069905248a4d26d12cfa89dc
+  - enabled: 1
+    path: Assets/Scenes/FasesFuncionais/lvl_7.unity
+    guid: 438ad78ea2e62cb42be1d73894fe9662
+  - enabled: 1
+    path: Assets/Scenes/FasesFuncionais/lvl_8.unity
+    guid: 2c804024a8a6b724cb28a63671e608c2
   m_configObjects: {}
