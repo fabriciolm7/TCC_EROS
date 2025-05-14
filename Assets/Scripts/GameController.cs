@@ -29,11 +29,21 @@ public class GameController : MonoBehaviour
         scoreText.text = totalScore.ToString();
     }
 
-    public void ShowGameOver()
+public void ShowGameOver()
+{
+    SceneTransitionManager stm = FindObjectOfType<SceneTransitionManager>();
+    if (stm != null)
     {
-        gameOver.SetActive(true);
-        Time.timeScale = 0f; // Pausa o jogo
+        stm.ShowGameOverWithFade(gameOver);
     }
+    else
+    {
+        Debug.LogError("SceneTransitionManager not found.");
+        gameOver.SetActive(true); // fallback
+        Time.timeScale = 0f;
+    }
+}
+
 
     public void RestartGame(string lvlName)
     {
