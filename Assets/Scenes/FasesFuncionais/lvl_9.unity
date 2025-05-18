@@ -675,6 +675,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2563444639671274877, guid: d9e287c60f107cf459f5f1397b48a751, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563444639671274877, guid: d9e287c60f107cf459f5f1397b48a751, type: 3}
+      propertyPath: m_TagString
+      value: Player1
+      objectReference: {fileID: 0}
     - target: {fileID: 5413869906534009628, guid: d9e287c60f107cf459f5f1397b48a751, type: 3}
       propertyPath: jumpSound
       value: 
