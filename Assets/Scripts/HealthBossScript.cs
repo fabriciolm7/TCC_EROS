@@ -5,33 +5,37 @@ using UnityEngine.UI;
 
 public class HealthBossScript : MonoBehaviour
 {
-    public int baseHealth = 100;
-    public int strawberriesThreshold = 20;
-    public int healthReduction = 1;
-    private int bossHealth;
-    private int maxHealth;
+    public float baseHealth = 100f;
+    private float bossHealth;
+    private float maxHealth;
     public Slider healthBarSlider;
 
     void Start()
     {
         int totalStrawberries = GameController.totalStrawberriesCollected;
-        int reduction = (totalStrawberries / strawberriesThreshold) * healthReduction;
+        float reduction = totalStrawberries * 0.5f;
 
-        bossHealth = Mathf.Max(baseHealth - reduction, 0);
-        maxHealth = bossHealth;
+        bossHealth = Mathf.Max(baseHealth - reduction, 10f);
+        maxHealth = baseHealth; 
 
         UpdateHealthBar();
+
+        var dialog = FindObjectOfType<DialogController>();
+        if (dialog != null)
+        {
+            dialog.MostrarDialogo(totalStrawberries, reduction);
+        }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         bossHealth -= amount;
-        bossHealth = Mathf.Max(bossHealth, 0);
+        bossHealth = Mathf.Max(bossHealth, 0f);
         UpdateHealthBar();
 
         Debug.Log("Boss recebeu dano! Vida restante: " + bossHealth);
 
-        if (bossHealth <= 0)
+        if (bossHealth <= 0f)
         {
             Debug.Log("Boss derrotado!");
         }
@@ -41,7 +45,8 @@ public class HealthBossScript : MonoBehaviour
     {
         if (healthBarSlider != null)
         {
-            healthBarSlider.value = bossHealth;
+            healthBarSlider.maxValue = baseHealth; 
+            healthBarSlider.value = bossHealth;    
         }
     }
 }

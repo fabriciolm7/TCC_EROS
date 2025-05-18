@@ -10,12 +10,9 @@ public class Player : MonoBehaviour
     public bool isFirstJump;
     public bool isSecondJump;
     private Animator anim;
-
-    // Layer for the ground
     private const int GroundLayer = 8;
-
-    private AudioSource audioSource; // Componente de áudio
-    public AudioClip gameOverSound; // Som de Game Over
+    private AudioSource audioSource;
+    public AudioClip gameOverSound; 
 
     void Start()
     {
@@ -31,6 +28,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (DialogController.IsDialogActive)
+        {
+            anim.SetBool("walk", false); // Para a animação de andar
+            return; 
+        }
         Move();
         Jump();
     }
