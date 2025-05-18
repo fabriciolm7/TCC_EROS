@@ -7,12 +7,16 @@ public class Player : MonoBehaviour
     public float speed;
     private Rigidbody2D rigidbody2D;
     public float jumpForce;
-    public bool isFirstJump;
-    public bool isSecondJump;
     private Animator anim;
-    private const int GroundLayer = 8;
+
+    public Transform groundCheck;
+    public float groundRadius = 0.1f;
+    public LayerMask groundLayer;
+
+    private bool canDoubleJump;
+
     private AudioSource audioSource;
-    public AudioClip gameOverSound; 
+    public AudioClip gameOverSound;
 
     void Start()
     {
@@ -22,7 +26,7 @@ public class Player : MonoBehaviour
 
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource não encontrado! Por favor, adicione o componente ao jogador.");
+            Debug.LogError("AudioSource nï¿½o encontrado! Por favor, adicione o componente ao jogador.");
         }
     }
 
@@ -30,7 +34,7 @@ public class Player : MonoBehaviour
     {
         if (DialogController.IsDialogActive)
         {
-            anim.SetBool("walk", false); // Para a animação de andar
+            anim.SetBool("walk", false); // Para a animaï¿½ï¿½o de andar
             return; 
         }
         Move();
@@ -55,17 +59,23 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
+        bool grounded = IsGrounded();
+
+        if (grounded)
+        {
+            canDoubleJump = true;
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
-            if (!isFirstJump)
+            if (grounded)
             {
                 PerformJump();
-                isFirstJump = true;
             }
-            else if (!isSecondJump)
+            else if (canDoubleJump)
             {
                 PerformJump();
-                isSecondJump = true;
+                canDoubleJump = false;
             }
         }
     }
@@ -81,40 +91,38 @@ public class Player : MonoBehaviour
         }
     }
 
+    bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == GroundLayer)
-        {
-            isFirstJump = false;
-            isSecondJump = false;
-        }
-
         if (collision.gameObject.tag == "Trap")
         {
             GameController.instance.ShowGameOver();
 
-            // Debug para verificar se o som de Game Over está sendo tocado
             Debug.Log("Game Over! Tocando som...");
 
-            // Toca o som de Game Over
             if (audioSource != null && gameOverSound != null)
             {
-               audioSource.Play(); // Reproduz o som
+                audioSource.Play();
             }
             else
             {
-                Debug.LogError("AudioSource ou gameOverSound não estão configurados corretamente.");
+                Debug.LogError("AudioSource ou gameOverSound nï¿½o estï¿½o configurados corretamente.");
             }
 
-            Destroy(gameObject); // Destroi o jogador
+            Destroy(gameObject);
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    void OnDrawGizmosSelected()
     {
-        if (collision.gameObject.layer == GroundLayer)
+        if (groundCheck != null)
         {
-            isFirstJump = true;
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
         }
     }
 }
