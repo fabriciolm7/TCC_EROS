@@ -24,7 +24,7 @@ public class FallingPlatform : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player1"))
         {
             // Obtém a posição do jogador em relação à plataforma
             float playerY = collision.gameObject.transform.position.y;

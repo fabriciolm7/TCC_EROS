@@ -31,10 +31,10 @@ public class Enemy : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         playerDestroyed = false;
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemy"), true);
-        
+
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource não encontrado! Adicione um componente AudioSource ao objeto da plataforma.");
+            Debug.LogError("AudioSource nao encontrado! Adicione um componente AudioSource ao objeto da plataforma.");
         }
     }
 
@@ -72,26 +72,21 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        
-        if (!col.gameObject.CompareTag("Trap"))
+        if (col.gameObject.tag == "Player1")
         {
-            if (col.gameObject.CompareTag("Player"))
-            {
-                float height = col.contacts[0].point.y - headPoint.position.y;
+            float height = col.contacts[0].point.y - headPoint.position.y;
 
-                if (height > 0 && !playerDestroyed)
-                {
-                    rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                    anim.SetTrigger("die");
-                    PlayDestroySound();
-                    StartCoroutine(DestroyAfterDelay(0.1f));
-                }
-                else
-                {
-                    playerDestroyed = true;
-                    GameController.instance.ShowGameOver();
-                    Destroy(col.gameObject);
-                }
+            if (height > 0)
+            {
+                rig.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                anim.SetTrigger("die");
+                Destroy(gameObject, 0.1f);
+            }
+            else
+            {
+                playerDestroyed = true;
+                GameController.instance.ShowGameOver();
+                Destroy(col.gameObject);
             }
         }
     }

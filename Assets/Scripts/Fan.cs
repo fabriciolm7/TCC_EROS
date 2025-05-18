@@ -22,7 +22,7 @@ public class FanSound : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         // Verifica se o jogador está colidindo com o ventilador
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player1")
         {
             // Toca o som do vento, se houver um AudioClip configurado
             if (windSound != null && audioSource != null)
@@ -37,7 +37,7 @@ public class FanSound : MonoBehaviour
     void OnCollisionExit2D(Collision2D collision)
     {
         // Quando o jogador sai do ventilador, o som para
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player1")
         {
             if (audioSource != null && audioSource.isPlaying)
             {

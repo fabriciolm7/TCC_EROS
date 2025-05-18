@@ -26,7 +26,7 @@ public class Strawberry : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Player"))
+        if (collider.gameObject.CompareTag("Player1"))
         {
             // Desativa o sprite e o colisor do morango
             sr.enabled = false;
