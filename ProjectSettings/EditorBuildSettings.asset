@@ -6,60 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/FinalMenu.unity
     guid: 78436a75cd9770c4085a27474db0f23c
   - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Lvl_Complete/LevelComplete_1.unity
-    guid: 509f81fb8255cbe4ea9577ef9fb80e7d
-  - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_2.unity
     guid: fd70433db6b66164d88def9e637dbae7
-  - enabled: 1
-    path: Assets/Scenes/Lvl_Complete/LevelComplete_2.unity
-    guid: 91b71548d31a07b4d9e5d193a17717da
   - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_3.unity
     guid: d85896a70b4cf4840b32e3dd0a5f9748
   - enabled: 1
-    path: Assets/Scenes/Lvl_Complete/LevelComplete_3.unity
-    guid: 837b977e48a2e9148be8387e1958eea2
-  - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_4.unity
     guid: 320f4fdd53076424c87d8e4ee64c94f9
-  - enabled: 1
-    path: Assets/Scenes/Lvl_Complete/LevelComplete_4.unity
-    guid: 8411649c3975232449ae702087f3a693
   - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_5.unity
     guid: 030a6ee8576d45941b614932cfbccdee
   - enabled: 1
-    path: Assets/Scenes/Lvl_Complete/LevelComplete_5.unity
-    guid: b31f9c2b7352b9049a3c66e54e06d30f
-  - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_6.unity
     guid: c64e5d20069905248a4d26d12cfa89dc
-  - enabled: 1
-    path: Assets/Scenes/Lvl_Complete/LevelComplete_6.unity
-    guid: 2a825f573daa93d47ae3cfce2e4a2558
   - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_7.unity
     guid: 438ad78ea2e62cb42be1d73894fe9662
   - enabled: 1
-    path: Assets/Scenes/Lvl_Complete/LevelComplete_7.unity
-    guid: 71346820001ef3c4e9ec9fc357311e30
-  - enabled: 1
     path: Assets/Scenes/FasesFuncionais/lvl_8.unity
     guid: 2c804024a8a6b724cb28a63671e608c2
-  - enabled: 1
-    path: Assets/Scenes/Lvl_Complete/LevelComplete_8.unity
-    guid: b4bb71abce0c17e4682169c4d63e824a
-  - enabled: 1
-    path: Assets/Scenes/FasesFuncionais/lvl_9.unity
-    guid: c355ccc962af1d546b1dd607983ceb76
-  - enabled: 1
-    path: Assets/Scenes/Lvl_Complete/LevelComplete_9.unity
-    guid: 1de90ea60a403824aa42b114e9c17cec
   m_configObjects: {}

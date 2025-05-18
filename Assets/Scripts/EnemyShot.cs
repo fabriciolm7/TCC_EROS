@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class BossAI : MonoBehaviour
@@ -8,10 +8,10 @@ public class BossAI : MonoBehaviour
     private AudioSource audioSource;
 
     public Transform firePoint;      // Ponto de tiro
-    public GameObject bulletPrefab;  // Prefab do projétil
+    public GameObject bulletPrefab;  // Prefab do projï¿½til
     public float fireRate = 1f;      // Tempo entre tiros
     public AudioClip attackSound;    // Som de ataque
-    public AudioClip destroySound;   // Som de destruição
+    public AudioClip destroySound;   // Som de destruiï¿½ï¿½o
 
     [SerializeField]
     private Transform DetectaChao;
@@ -27,13 +27,17 @@ public class BossAI : MonoBehaviour
     private float nextFireTime = 0f;
     private Transform player;
 
+    public int maxHealth = 100;
+    private int currentHealth;
+    public AudioClip hitSound; 
+
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-
+        currentHealth = maxHealth;
         anim.Play("boss_idle");
     }
 
@@ -96,6 +100,24 @@ public class BossAI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isChasing = true;
+            if (other.transform.position.y > transform.position.y + 0.5f)
+            {
+                // Aplica dano ao boss
+                HealthBossScript healthScript = GetComponent<HealthBossScript>();
+                if (healthScript != null)
+                {
+                    anim.SetTrigger("Hit");
+                    anim.Play("boss_hit");
+                    healthScript.TakeDamage(1);
+                }
+
+                // DÃ¡ um impulso vertical no jogador
+                Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, 10f);
+                }
+            }
         }
     }
 
