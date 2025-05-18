@@ -41,7 +41,7 @@ public class HomingBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player1"))
         {
             // Aqui você pode adicionar dano ao player
             Destroy(gameObject);

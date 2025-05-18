@@ -36,7 +36,7 @@ public class BossAI : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        player = GameObject.FindGameObjectWithTag("Player1")?.transform;
         currentHealth = maxHealth;
         anim.Play("boss_idle");
     }
@@ -97,7 +97,7 @@ public class BossAI : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player1"))
         {
             isChasing = true;
             if (other.transform.position.y > transform.position.y + 0.5f)
@@ -123,7 +123,7 @@ public class BossAI : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player1"))
         {
             isChasing = false;
             anim.Play("boss_idle");
