@@ -23,30 +23,52 @@ public class GameController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void Start()
-    {
 
-    }
     public void UpdateScore()
     {
         scoreText.text = totalScore.ToString();
     }
-    public void ShowGameOver()
+
+public void ShowGameOver()
+{
+    SceneTransitionManager stm = FindObjectOfType<SceneTransitionManager>();
+    if (stm != null)
     {
-        gameOver.SetActive(true);
+        stm.ShowGameOverWithFade(gameOver);
     }
+    else
+    {
+        Debug.LogError("SceneTransitionManager not found.");
+        gameOver.SetActive(true); // fallback
+        Time.timeScale = 0f;
+    }
+}
+
+
     public void RestartGame(string lvlName)
     {
-        SceneManager.LoadScene(lvlName);
+        Time.timeScale = 1f;
+
+        SceneTransitionManager stm = FindObjectOfType<SceneTransitionManager>();
+        if (stm != null)
+        {
+            stm.LoadScene(lvlName);
+        }
+        else
+        {
+            Debug.LogError("SceneTransitionManager não encontrado na cena.");
+        }
     }
+
+
     public void doExitGame()
     {
         Application.Quit();
     }
-     public void AddStrawberry()
+
+    public void AddStrawberry()
     {
         totalStrawberriesCollected++;
     }
 }
-
 
