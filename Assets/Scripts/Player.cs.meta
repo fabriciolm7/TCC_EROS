@@ -3,9 +3,7 @@ guid: 454a2e1f176d59143961f379f2dc51c5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - gameOverSound: {fileID: 8300000, guid: f5cc0d3538cf1314bb1db86f95ddabc9, type: 3}
-  - landSound: {fileID: 8300000, guid: 10ad4dcdcdbccfc498f115542004a8d6, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1589,7 +1589,6 @@ MonoBehaviour:
   olhandoParaDireita: 0
   velocidade: 7
   playerDestroyed: 0
-  destroySound: {fileID: 0}
 --- !u!50 &194391309
 Rigidbody2D:
   serializedVersion: 4
@@ -2503,7 +2502,6 @@ MonoBehaviour:
   olhandoParaDireita: 0
   velocidade: 5.5
   playerDestroyed: 0
-  destroySound: {fileID: 0}
 --- !u!50 &402086970
 Rigidbody2D:
   serializedVersion: 4
@@ -5070,7 +5068,6 @@ MonoBehaviour:
   olhandoParaDireita: 0
   velocidade: 7
   playerDestroyed: 0
-  destroySound: {fileID: 0}
 --- !u!50 &617170952
 Rigidbody2D:
   serializedVersion: 4
@@ -6357,7 +6354,6 @@ MonoBehaviour:
   olhandoParaDireita: 0
   velocidade: 5.5
   playerDestroyed: 0
-  destroySound: {fileID: 0}
 --- !u!50 &793287608
 Rigidbody2D:
   serializedVersion: 4
@@ -13741,7 +13737,6 @@ MonoBehaviour:
   olhandoParaDireita: 0
   velocidade: 7
   playerDestroyed: 0
-  destroySound: {fileID: 0}
 --- !u!50 &1640614315
 Rigidbody2D:
   serializedVersion: 4
@@ -14665,7 +14660,6 @@ MonoBehaviour:
   olhandoParaDireita: 0
   velocidade: 7
   playerDestroyed: 0
-  destroySound: {fileID: 0}
 --- !u!50 &1805480692
 Rigidbody2D:
   serializedVersion: 4
@@ -15342,7 +15336,6 @@ MonoBehaviour:
   olhandoParaDireita: 0
   velocidade: 7
   playerDestroyed: 0
-  destroySound: {fileID: 0}
 --- !u!50 &1913045746
 Rigidbody2D:
   serializedVersion: 4
