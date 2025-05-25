@@ -11,9 +11,13 @@ public class DialogController : MonoBehaviour
     public TextMeshProUGUI dialogText;
     public Button closeButton;
     public static bool IsDialogActive;
+    public static bool jaMostrouDialogo = false;
 
     private void Start()
     {
+        dialogPanel.SetActive(false);
+        IsDialogActive = false;
+
         closeButton.onClick.AddListener(() =>
         {
             dialogPanel.SetActive(false);
@@ -24,7 +28,16 @@ public class DialogController : MonoBehaviour
     public void MostrarDialogo(int morangosColetados, float vidaPerdida)
     {
         string mensagem = $"Parabéns! Você resgatou {morangosColetados} morangos!" +
-                          $"O inimigo perdeu {vidaPerdida} pontos de vida!";
+                          $"O inimigo perdeu {vidaPerdida} pontos de vida! Para derrotá-lo, pule em cima dele e fuja de seus ataques";
+        dialogText.text = mensagem;
+        dialogPanel.SetActive(true);
+        IsDialogActive = true;
+        jaMostrouDialogo = true;
+    }
+
+    public void MostrarDialogoFinal()
+    {
+        string mensagem = $"Parabéns! você venceu a corrida para resgatar seus morangos!";
         dialogText.text = mensagem;
         dialogPanel.SetActive(true);
         IsDialogActive = true;

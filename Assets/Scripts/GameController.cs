@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject gameOver;
     public static int totalStrawberriesCollected = 0;
+    public static float bossCurrentHealth = -1f;
 
     void Awake()
     {
@@ -29,20 +30,20 @@ public class GameController : MonoBehaviour
         scoreText.text = totalScore.ToString();
     }
 
-public void ShowGameOver()
-{
-    SceneTransitionManager stm = FindObjectOfType<SceneTransitionManager>();
-    if (stm != null)
+    public void ShowGameOver()
     {
-        stm.ShowGameOverWithFade(gameOver);
+        SceneTransitionManager stm = FindObjectOfType<SceneTransitionManager>();
+        if (stm != null)
+        {
+            stm.ShowGameOverWithFade(gameOver);
+        }
+        else
+        {
+            Debug.LogError("SceneTransitionManager not found.");
+            gameOver.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
-    else
-    {
-        Debug.LogError("SceneTransitionManager not found.");
-        gameOver.SetActive(true); // fallback
-        Time.timeScale = 0f;
-    }
-}
 
 
     public void RestartGame(string lvlName)
@@ -59,7 +60,6 @@ public void ShowGameOver()
             Debug.LogError("SceneTransitionManager não encontrado na cena.");
         }
     }
-
 
     public void doExitGame()
     {
