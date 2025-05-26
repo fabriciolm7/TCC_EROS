@@ -1238,9 +1238,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Desenvolvedores:\t\t\t\t\t\tOrientador: \nAna Paula Ghiraldelli Silva
-    - 0040962313009\t\tAnt\xF4nio Alfredo Lacerda\nEros Cesar Vital de Oliveira -
-    0040962223036\nFabr\xEDcio Leal Mariano - 0040962223031\n\n"
+  m_text: "DESENVOLVEDORES:\t\t\t\t\t\t\nAna Paula Ghiraldelli Silva (0040962313009)
+    - Programadora e Documentadora\t\t\nEros Cesar Vital de Oliveira (0040962223036)
+    - Programador e Documentador\nFabr\xEDcio Leal Mariano (0040962223031) - Diretor
+    de Audiovisual e Programador\n\nProjeto orientador por Ant\xF4nio Alfredo Lacerda\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6522f30e342599e4e9dd4cc2cc03c830, type: 2}
@@ -1504,7 +1505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 888, y: -355}
+  m_AnchoredPosition: {x: 888, y: -376}
   m_SizeDelta: {x: 546.0469, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391350533
@@ -5740,7 +5741,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: lvl_1
+          m_StringArgument: Cutscene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1442731738
