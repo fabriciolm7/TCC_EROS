@@ -29,20 +29,37 @@ public class GameController : MonoBehaviour
         scoreText.text = totalScore.ToString();
     }
 
-public void ShowGameOver()
+void Update()
 {
-    SceneTransitionManager stm = FindObjectOfType<SceneTransitionManager>();
-    if (stm != null)
+    if (
+        gameOver != null &&
+        gameOver.activeSelf &&
+        SceneTransitionManager.instance != null &&
+        SceneTransitionManager.instance.readyForInput &&
+        Input.GetKeyDown(KeyCode.Space)
+    )
     {
-        stm.ShowGameOverWithFade(gameOver);
-    }
-    else
-    {
-        Debug.LogError("SceneTransitionManager not found.");
-        gameOver.SetActive(true); // fallback
-        Time.timeScale = 0f;
+        // Optional: log for testing
+        Debug.Log("Restart triggered by spacebar.");
+        RestartGame(SceneManager.GetActiveScene().name);
     }
 }
+
+
+    public void ShowGameOver()
+    {
+        SceneTransitionManager stm = FindObjectOfType<SceneTransitionManager>();
+        if (stm != null)
+        {
+            stm.ShowGameOverWithFade(gameOver);
+        }
+        else
+        {
+            Debug.LogError("SceneTransitionManager not found.");
+            gameOver.SetActive(true); // fallback
+            Time.timeScale = 0f;
+        }
+    }
 
 
     public void RestartGame(string lvlName)

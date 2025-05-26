@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 public class SceneTransitionManager : MonoBehaviour
 {
     public static SceneTransitionManager instance;
+    public bool readyForInput = false;
+
     [SerializeField] Animator animator;
+private void Awake()
+{
+    instance = this;
+    readyForInput = false; // Reset just in case
+}
 
-    private void Awake()
-    {
-        instance = this;
-
-    }
 
     public void LoadScene(string sceneName)
     {
@@ -31,27 +33,26 @@ public class SceneTransitionManager : MonoBehaviour
         animator.SetTrigger("Start");
     }
 
-public void ShowGameOverWithFade(GameObject gameOverPanel)
-{
-    StartCoroutine(GameOverFadeRoutine(gameOverPanel));
-}
+    public void ShowGameOverWithFade(GameObject gameOverPanel)
+    {
+        StartCoroutine(GameOverFadeRoutine(gameOverPanel));
+    }
 
-IEnumerator GameOverFadeRoutine(GameObject gameOverPanel)
-{
-    // Fade to black
-    animator.SetTrigger("End");
-    yield return new WaitForSeconds(1f); // assumes 1s fade
+    IEnumerator GameOverFadeRoutine(GameObject gameOverPanel)
+    {
+        readyForInput = false;
 
-    // Activate game over panel
-    gameOverPanel.SetActive(true);
+        animator.SetTrigger("End");
+        yield return new WaitForSecondsRealtime(1f); // use Realtime!
 
-    // Fade back in (reveal Game Over UI)
-    animator.SetTrigger("Start");
-    yield return new WaitForSeconds(1f);
+        gameOverPanel.SetActive(true);
 
-    // Now pause
-    Time.timeScale = 0f;
-}
+        animator.SetTrigger("Start");
+        yield return new WaitForSecondsRealtime(1f); // again, Realtime!
 
+        Time.timeScale = 0f;
 
+        readyForInput = true; // ✅ input now allowed
+    }
+    
 }
