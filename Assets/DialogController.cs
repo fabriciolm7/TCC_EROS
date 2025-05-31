@@ -15,7 +15,6 @@ public class DialogController : MonoBehaviour
 
     private void Start()
     {
-        dialogPanel.SetActive(false);
         IsDialogActive = false;
 
         closeButton.onClick.AddListener(() =>
