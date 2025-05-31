@@ -51,11 +51,11 @@ public class HealthBossScript : MonoBehaviour
         if (healthBarSlider != null)
         {
             sliderRectTransform = healthBarSlider.GetComponent<RectTransform>();
-            Debug.Log("Slider de vida atribuído com sucesso.");
+            Debug.Log("Slider de vida atribuï¿½do com sucesso.");
         }
         else
         {
-            Debug.LogWarning("Slider de vida NÃO atribuído!");
+            Debug.LogWarning("Slider de vida Nï¿½O atribuï¿½do!");
         }
     }
 
@@ -79,7 +79,7 @@ public class HealthBossScript : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Boss está atrás da câmera! A barra de vida não será renderizada.");
+                Debug.LogWarning("Boss estï¿½ atrï¿½s da cï¿½mera! A barra de vida nï¿½o serï¿½ renderizada.");
             }
         }
     }

@@ -109,6 +109,7 @@ public class BossAI : MonoBehaviour
                     anim.SetTrigger("Hit");
                     anim.Play("boss_hit");
                     healthScript.TakeDamage(1);
+                    PlaySound(hitSound);  // <-- Play the hit sound here
                 }
 
                 // Dá um impulso vertical no jogador
