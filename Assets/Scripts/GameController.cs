@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public int totalScore;
+    public static int totalScore;
     public static GameController instance;
     public TextMeshProUGUI scoreText;
     public GameObject gameOver;

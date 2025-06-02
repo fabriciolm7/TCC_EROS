@@ -44,8 +44,7 @@ public class Strawberry : MonoBehaviour
                 audioSource.Play();
             }
 
-            // Atualiza a pontua��o
-            GameController.instance.totalScore += score;
+            GameController.totalScore += score;
             GameController.instance.UpdateScore();
             GameController.instance.AddStrawberry();
 
