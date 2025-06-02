@@ -40,7 +40,6 @@ public class GameController : MonoBehaviour
             Input.GetKeyDown(KeyCode.Space)
         )
         {
-            // Optional: log for testing
             Debug.Log("Restart triggered by spacebar.");
             RestartGame(SceneManager.GetActiveScene().name);
         }

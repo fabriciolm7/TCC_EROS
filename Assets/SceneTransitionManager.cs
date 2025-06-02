@@ -8,11 +8,11 @@ public class SceneTransitionManager : MonoBehaviour
     public bool readyForInput = false;
 
     [SerializeField] Animator animator;
-private void Awake()
-{
-    instance = this;
-    readyForInput = false; // Reset just in case
-}
+    private void Awake()
+    {
+        instance = this;
+        readyForInput = false; // Reset just in case
+    }
 
 
     public void LoadScene(string sceneName)

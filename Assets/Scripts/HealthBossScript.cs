@@ -23,6 +23,7 @@ public class HealthBossScript : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Boss current health: " + GameController.bossCurrentHealth);
         int totalStrawberries = GameController.totalStrawberriesCollected;
         float reduction = totalStrawberries * 0.5f;
 
@@ -31,18 +32,16 @@ public class HealthBossScript : MonoBehaviour
         if (GameController.bossCurrentHealth > 0)
         {
             bossHealth = GameController.bossCurrentHealth;
-            DialogController.jaMostrouDialogo = true;
         }
-        else
+        else 
         {
             bossHealth = Mathf.Max(baseHealth - reduction, 10f);
             GameController.bossCurrentHealth = bossHealth;
 
             var dialog = FindObjectOfType<DialogController>();
-            if (dialog != null && !DialogController.jaMostrouDialogo)
+            if (dialog != null)
             {
                 dialog.MostrarDialogo(totalStrawberries, reduction);
-                DialogController.jaMostrouDialogo = true;
             }
         }
 
@@ -51,11 +50,10 @@ public class HealthBossScript : MonoBehaviour
         if (healthBarSlider != null)
         {
             sliderRectTransform = healthBarSlider.GetComponent<RectTransform>();
-            Debug.Log("Slider de vida atribu�do com sucesso.");
         }
         else
         {
-            Debug.LogWarning("Slider de vida N�O atribu�do!");
+            Debug.LogWarning("Slider de vida nao atribuido!");
         }
     }
 
@@ -103,6 +101,10 @@ public class HealthBossScript : MonoBehaviour
                 dialog.MostrarDialogoFinal();
             }
         }
+
+        GameController.bossCurrentHealth = bossHealth;
+        PlayerPrefs.SetFloat("BossHealth", bossHealth);
+        PlayerPrefs.Save();
     }
 
     private void UpdateHealthBar()
