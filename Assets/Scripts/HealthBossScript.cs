@@ -18,20 +18,22 @@ public class HealthBossScript : MonoBehaviour
     void Awake()
     {
         mainCamera = Camera.main;
-        Debug.Log("Main Camera: " + mainCamera?.name);
     }
 
     void Start()
     {
-        Debug.Log("Boss current health: " + GameController.bossCurrentHealth);
         int totalStrawberries = GameController.totalStrawberriesCollected;
-        float reduction = totalStrawberries * 0.5f;
+        float reduction = totalStrawberries * 0.2f;
 
         maxHealth = baseHealth;
 
         if (GameController.bossCurrentHealth > 0)
         {
             bossHealth = GameController.bossCurrentHealth;
+        }
+        else if (GameController.bossCurrentHealth == 0)
+        {
+            Destroy(gameObject);
         }
         else 
         {
@@ -89,8 +91,6 @@ public class HealthBossScript : MonoBehaviour
         bossHealth = Mathf.Max(bossHealth, 0f);
         GameController.bossCurrentHealth = bossHealth; 
         UpdateHealthBar();
-
-        Debug.Log("Boss recebeu dano! Vida restante: " + bossHealth);
 
         if (bossHealth <= 0f)
         {
