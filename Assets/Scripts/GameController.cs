@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public int totalScore;
+    public static int totalScore;
     public static GameController instance;
     public TextMeshProUGUI scoreText;
     public GameObject gameOver;
@@ -40,7 +40,6 @@ public class GameController : MonoBehaviour
             Input.GetKeyDown(KeyCode.Space)
         )
         {
-            // Optional: log for testing
             Debug.Log("Restart triggered by spacebar.");
             RestartGame(SceneManager.GetActiveScene().name);
         }

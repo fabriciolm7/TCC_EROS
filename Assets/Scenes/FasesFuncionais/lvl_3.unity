@@ -904,6 +904,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4433510507758862782, guid: 9b51e0ae6a0f7d74dbeb854ecb501981, type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5472878795175155929, guid: 9b51e0ae6a0f7d74dbeb854ecb501981, type: 3}
       propertyPath: m_Name
       value: PontosAndGameOver
@@ -15223,7 +15227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3291f3204b310408ec116548f5005c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalScore: 0
   scoreText: {fileID: 303291249}
   gameOver: {fileID: 1477896193}
 --- !u!4 &1728008503

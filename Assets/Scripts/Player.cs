@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     {
         if (DialogController.IsDialogActive)
         {
-            anim.SetBool("walk", false); // Para a anima��o de andar
+            anim.SetBool("walk", false); 
             return; 
         }
         Move();

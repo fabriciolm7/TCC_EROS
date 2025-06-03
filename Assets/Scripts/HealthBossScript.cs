@@ -18,31 +18,32 @@ public class HealthBossScript : MonoBehaviour
     void Awake()
     {
         mainCamera = Camera.main;
-        Debug.Log("Main Camera: " + mainCamera?.name);
     }
 
     void Start()
     {
         int totalStrawberries = GameController.totalStrawberriesCollected;
-        float reduction = totalStrawberries * 0.5f;
+        float reduction = totalStrawberries * 0.2f;
 
         maxHealth = baseHealth;
 
         if (GameController.bossCurrentHealth > 0)
         {
             bossHealth = GameController.bossCurrentHealth;
-            DialogController.jaMostrouDialogo = true;
         }
-        else
+        else if (GameController.bossCurrentHealth == 0)
+        {
+            Destroy(gameObject);
+        }
+        else 
         {
             bossHealth = Mathf.Max(baseHealth - reduction, 10f);
             GameController.bossCurrentHealth = bossHealth;
 
             var dialog = FindObjectOfType<DialogController>();
-            if (dialog != null && !DialogController.jaMostrouDialogo)
+            if (dialog != null)
             {
                 dialog.MostrarDialogo(totalStrawberries, reduction);
-                DialogController.jaMostrouDialogo = true;
             }
         }
 
@@ -51,11 +52,10 @@ public class HealthBossScript : MonoBehaviour
         if (healthBarSlider != null)
         {
             sliderRectTransform = healthBarSlider.GetComponent<RectTransform>();
-            Debug.Log("Slider de vida atribu�do com sucesso.");
         }
         else
         {
-            Debug.LogWarning("Slider de vida N�O atribu�do!");
+            Debug.LogWarning("Slider de vida nao atribuido!");
         }
     }
 
@@ -92,8 +92,6 @@ public class HealthBossScript : MonoBehaviour
         GameController.bossCurrentHealth = bossHealth; 
         UpdateHealthBar();
 
-        Debug.Log("Boss recebeu dano! Vida restante: " + bossHealth);
-
         if (bossHealth <= 0f)
         {
             Debug.Log("Boss derrotado!");
@@ -103,6 +101,10 @@ public class HealthBossScript : MonoBehaviour
                 dialog.MostrarDialogoFinal();
             }
         }
+
+        GameController.bossCurrentHealth = bossHealth;
+        PlayerPrefs.SetFloat("BossHealth", bossHealth);
+        PlayerPrefs.Save();
     }
 
     private void UpdateHealthBar()
