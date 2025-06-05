@@ -258,8 +258,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\nAnimadores\n\nAudiovisual\n\nProgramadores\n\n\n\nOrientador de Projeto\n\nAgradecimentos
-    Especiais\n\n\n\n\nMenu Principal\n\nCutscene\n\n\nFases Principais\n\nFase do
-    chef\xE3o\n\n\nCr\xE9ditos Finais\n\n\n\n\nBot\xF5es\n\n\nSom ao coletar morangos\n\nSom
+    Especiais\n\n\n\n\n\nMenu Principal\n\nCutscene\n\n\nFases Principais\n\nFase
+    do chef\xE3o\n\n\nCr\xE9ditos Finais\n\n\n\n\nBot\xF5es\n\n\nSom ao coletar morangos\n\nSom
     emitido ao pular\n\nSom ao Pular no Trampolim\n\nSom da platafroma caindo\n\nSom
     ao boss levar dano\n\nSom de disparo do boss\n\n\n\n\n\n\xCDcones dos bot\xF5es\n\ngame
     over background\n\n\n\nPersonagens e cen\xE1rio\n\n\nSprite dos menus e bot\xF5es\n"
@@ -807,7 +807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: -29}
+  m_AnchoredPosition: {x: 60, y: 4}
   m_SizeDelta: {x: 650, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &665002861
@@ -859,8 +859,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65
-  m_fontSizeBase: 65
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -944,7 +944,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -1819}
+  m_AnchoredPosition: {x: 5, y: -1882}
   m_SizeDelta: {x: 366.416, y: 61.069}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034742455
@@ -1485,13 +1485,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\nAna Paula Ghiraldelli Silva\n\nFabr\xEDcio Leal Mariano\n\nAna Paula
     Ghiraldelli Silva\nEros Cesar Vital de Oliveira\nFar\xEDcio Leal Mariano\n\nAnt\xF4nio
-    Alfredo Lacerda\n\n\n\n\n\n\nNo Destination - Pix 8 bit Music\n\nThe wandering
-    Samurai\r\nPixelmaniax\n\nTheme Music - Pixabay\n\nDeep Sea Creature - Pix 8
-    Bit Music\n\nOther World - Pix 8 bit Music\n\n\n\n\nSelection Sounds\r\njohnthewizar
-    (Freesound)\n\nCollect Points - Pixabay\n\nCartoon Jump - Pixabay\n\nFunny Spring
-    Jump - Pixabay\n\nFalling Platform Jump - Pixabay\n\nHit Flesh 02 - Pixabay\n\nLaser-Gun-Shot
-    - Pixabay\n\n\n\n\n\nLucid Icons by Midhil M\n\nGradient abstract pixel rain
-    background\r\nFreepik\n\nPixel Adventure 1 e Pixel Adventure 2\n\nPixel 9-sprites"
+    Alfredo Lacerda\n\n\rJo\xE3o Emmanuel D Alkmin Neves\nJose William Pinto Gomes\n\n\n\n\nNo
+    Destination - Pix 8 bit Music\n\nThe wandering Samurai\r\nPixelmaniax\n\nTheme
+    Music - Pixabay\n\nDeep Sea Creature - Pix 8 Bit Music\n\nOther World - Pix 8
+    bit Music\n\n\n\n\nSelection Sounds\r\njohnthewizar (Freesound)\n\nCollect Points
+    - Pixabay\n\nCartoon Jump - Pixabay\n\nFunny Spring Jump - Pixabay\n\nFalling
+    Platform Jump - Pixabay\n\nHit Flesh 02 - Pixabay\n\nLaser-Gun-Shot - Pixabay\n\n\n\n\n\nLucid
+    Icons by Midhil M\n\nGradient abstract pixel rain background\r\nFreepik\n\nPixel
+    Adventure 1 e Pixel Adventure 2\n\nPixel 9-sprites"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6522f30e342599e4e9dd4cc2cc03c830, type: 2}
@@ -1960,7 +1961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: -944}
+  m_AnchoredPosition: {x: 5, y: -1011}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1637552302
