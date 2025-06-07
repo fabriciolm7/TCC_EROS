@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: VL COMPANY
-  productName: Berry Bouny Adventure (BY EROS)
+  companyName: VLA COMPANY
+  productName: Strawberry Saviors
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -274,7 +274,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 282fa6659f7eabb4f88d7cd347ae7723, type: 3}
+      m_Icon: {fileID: 2800000, guid: 1a6feec238b9a99499082bb755fa32df, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
