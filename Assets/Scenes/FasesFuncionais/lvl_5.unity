@@ -7996,7 +7996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -425, y: -1.2999878}
+  m_AnchoredPosition: {x: -424.99994, y: -1.3000488}
   m_SizeDelta: {x: -1650, y: -804.362}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &143496356
@@ -10857,7 +10857,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -13752,7 +13752,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1.2999878}
+  m_AnchoredPosition: {x: 0, y: -1.3000488}
   m_SizeDelta: {x: -1640, y: -804.362}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1357580702
@@ -14629,7 +14629,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 425, y: -1.2999878}
+  m_AnchoredPosition: {x: 425, y: -1.3000488}
   m_SizeDelta: {x: -1650, y: -804.362}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1525346408
@@ -15407,7 +15407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 072151922ad4dfb42946069fc9f21596, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1da201f83d1d6a0468d6d14b1a5baa38, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16639,7 +16639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4340706298175549712, guid: 00807ad8232eba047aff56bb73bb6028, type: 3}
       propertyPath: lvlName
-      value: lvl_6
+      value: lvl_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -262,8 +262,7 @@ MonoBehaviour:
     do chef\xE3o\n\n\nCr\xE9ditos Finais\n\n\n\n\nBot\xF5es\n\n\nSom ao coletar morangos\n\nSom
     emitido ao pular\n\nSom ao Pular no Trampolim\n\nSom da platafroma caindo\n\nSom
     ao boss levar dano\n\nSom de disparo do boss\n\n\n\n\n\n\xCDcones dos bot\xF5es\n\ngame
-    over background\n\n\n\nPersonagens e cen\xE1rio\n\n\nSprite dos menus e bot\xF5es\n\nBackground
-    nas fases principais\n"
+    over background\n\n\n\nPersonagens e cen\xE1rio\n\n\nSprite dos menus e bot\xF5es\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6522f30e342599e4e9dd4cc2cc03c830, type: 2}
@@ -1492,9 +1491,8 @@ MonoBehaviour:
     bit Music\n\n\n\n\nSelection Sounds\r\njohnthewizar (Freesound)\n\nCollect Points
     - Pixabay\n\nCartoon Jump - Pixabay\n\nFunny Spring Jump - Pixabay\n\nFalling
     Platform Jump - Pixabay\n\nHit Flesh 02 - Pixabay\n\nLaser-Gun-Shot - Pixabay\n\n\n\n\n\nLucid
-    Icons by Leo Red\n\nGradient abstract pixel rain background\r\nFreepik\n\nPixel
-    Adventure 1 e Pixel Adventure 2\n\nPixel 9-sprites\n\nPixel Skies DEMO Background
-    pack por Digital Moons"
+    Icons by Midhil M\n\nGradient abstract pixel rain background\r\nFreepik\n\nPixel
+    Adventure 1 e Pixel Adventure 2\n\nPixel 9-sprites"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6522f30e342599e4e9dd4cc2cc03c830, type: 2}
