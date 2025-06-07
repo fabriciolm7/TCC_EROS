@@ -10,7 +10,7 @@ public class HealthBossScript : MonoBehaviour
     private float maxHealth;
 
     public Slider healthBarSlider;
-    public Vector3 offset = new Vector3(0, 2f, 0); 
+    public Vector3 offset = new Vector3(0, 2f, 0);
 
     private Camera mainCamera;
     private RectTransform sliderRectTransform;
@@ -23,7 +23,7 @@ public class HealthBossScript : MonoBehaviour
     void Start()
     {
         int totalStrawberries = GameController.totalStrawberriesCollected;
-        float reduction = totalStrawberries * 0.2f;
+        float reduction = totalStrawberries * 1f;
 
         maxHealth = baseHealth;
 
@@ -35,9 +35,11 @@ public class HealthBossScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else 
+        else
         {
-            bossHealth = Mathf.Max(baseHealth - reduction, 10f);
+            // Garante que o boss tenha pelo menos 40% da vida base
+            float minAllowedHealth = baseHealth * 0.4f;
+            bossHealth = Mathf.Max(baseHealth - reduction, minAllowedHealth);
             GameController.bossCurrentHealth = bossHealth;
 
             var dialog = FindObjectOfType<DialogController>();
@@ -59,7 +61,6 @@ public class HealthBossScript : MonoBehaviour
         }
     }
 
-
     void Update()
     {
         if (mainCamera != null && sliderRectTransform != null)
@@ -79,17 +80,16 @@ public class HealthBossScript : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Boss est� atr�s da c�mera! A barra de vida n�o ser� renderizada.");
+                Debug.LogWarning("Boss está atrás da câmera! A barra de vida não será renderizada.");
             }
         }
     }
-
 
     public void TakeDamage(float amount)
     {
         bossHealth -= amount;
         bossHealth = Mathf.Max(bossHealth, 0f);
-        GameController.bossCurrentHealth = bossHealth; 
+        GameController.bossCurrentHealth = bossHealth;
         UpdateHealthBar();
 
         if (bossHealth <= 0f)

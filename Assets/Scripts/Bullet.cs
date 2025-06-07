@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class HomingBullet : MonoBehaviour
 {
-    public float speed = 6f;          
-    public float rotateSpeed = 300f;  
-    public float lifeTime = 5f;      
-    private Transform target;        
+    public float speed = 6f;
+    public float rotateSpeed = 300f;
+    public float lifeTime = 5f;
+    private Transform target;
 
     void Start()
     {
