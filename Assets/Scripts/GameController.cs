@@ -13,6 +13,10 @@ public class GameController : MonoBehaviour
     public static int totalStrawberriesCollected = 0;
     public static float bossCurrentHealth = -1f;
 
+    // Novas variáveis para armazenar o progresso ao entrar na fase
+    private int scoreBeforeLevel;
+    private int strawberriesBeforeLevel;
+
     void Awake()
     {
         if (instance == null)
@@ -23,6 +27,10 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Salva o estado atual da pontuação e morangos ao iniciar a fase
+        scoreBeforeLevel = totalScore;
+        strawberriesBeforeLevel = totalStrawberriesCollected;
     }
 
     public void UpdateScore()
@@ -45,9 +53,14 @@ public class GameController : MonoBehaviour
         }
     }
 
-
     public void ShowGameOver()
     {
+        // Restaura o progresso salvo
+        totalScore = scoreBeforeLevel;
+        totalStrawberriesCollected = strawberriesBeforeLevel;
+        UpdateScore();
+
+        // Exibe o game over com fade ou fallback
         SceneTransitionManager stm = FindObjectOfType<SceneTransitionManager>();
         if (stm != null)
         {
@@ -61,6 +74,11 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public static void ResetProgress()
+    {
+        totalScore = 0;
+        totalStrawberriesCollected = 0;
+    }
 
     public void RestartGame(string lvlName)
     {
@@ -87,4 +105,3 @@ public class GameController : MonoBehaviour
         totalStrawberriesCollected++;
     }
 }
-
