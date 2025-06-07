@@ -26,12 +26,17 @@ public class Player : MonoBehaviour
 
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource não encontrado! Por favor, adicione o componente ao jogador.");
+            Debug.LogError("AudioSource nï¿½o encontrado! Por favor, adicione o componente ao jogador.");
         }
     }
 
     void Update()
     {
+        if (DialogController.IsDialogActive)
+        {
+            anim.SetBool("walk", false); 
+            return; 
+        }
         Move();
         Jump();
     }
@@ -105,7 +110,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                Debug.LogError("AudioSource ou gameOverSound não estão configurados corretamente.");
+                Debug.LogError("AudioSource ou gameOverSound nï¿½o estï¿½o configurados corretamente.");
             }
 
             Destroy(gameObject);

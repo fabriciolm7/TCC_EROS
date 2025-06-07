@@ -6,11 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    public int totalScore;
+    public static int totalScore;
     public static GameController instance;
     public TextMeshProUGUI scoreText;
     public GameObject gameOver;
     public static int totalStrawberriesCollected = 0;
+    public static float bossCurrentHealth = -1f;
+
+    // Novas variáveis para armazenar o progresso ao entrar na fase
+    private int scoreBeforeLevel;
+    private int strawberriesBeforeLevel;
 
     void Awake()
     {
@@ -22,6 +27,10 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Salva o estado atual da pontuação e morangos ao iniciar a fase
+        scoreBeforeLevel = totalScore;
+        strawberriesBeforeLevel = totalStrawberriesCollected;
     }
 
     public void UpdateScore()
@@ -29,21 +38,47 @@ public class GameController : MonoBehaviour
         scoreText.text = totalScore.ToString();
     }
 
-public void ShowGameOver()
-{
-    SceneTransitionManager stm = FindObjectOfType<SceneTransitionManager>();
-    if (stm != null)
+    void Update()
     {
-        stm.ShowGameOverWithFade(gameOver);
+        if (
+            gameOver != null &&
+            gameOver.activeSelf &&
+            SceneTransitionManager.instance != null &&
+            SceneTransitionManager.instance.readyForInput &&
+            Input.GetKeyDown(KeyCode.Space)
+        )
+        {
+            Debug.Log("Restart triggered by spacebar.");
+            RestartGame(SceneManager.GetActiveScene().name);
+        }
     }
-    else
-    {
-        Debug.LogError("SceneTransitionManager not found.");
-        gameOver.SetActive(true); // fallback
-        Time.timeScale = 0f;
-    }
-}
 
+    public void ShowGameOver()
+    {
+        // Restaura o progresso salvo
+        totalScore = scoreBeforeLevel;
+        totalStrawberriesCollected = strawberriesBeforeLevel;
+        UpdateScore();
+
+        // Exibe o game over com fade ou fallback
+        SceneTransitionManager stm = FindObjectOfType<SceneTransitionManager>();
+        if (stm != null)
+        {
+            stm.ShowGameOverWithFade(gameOver);
+        }
+        else
+        {
+            Debug.LogError("SceneTransitionManager not found.");
+            gameOver.SetActive(true); // fallback
+            Time.timeScale = 0f;
+        }
+    }
+
+    public static void ResetProgress()
+    {
+        totalScore = 0;
+        totalStrawberriesCollected = 0;
+    }
 
     public void RestartGame(string lvlName)
     {
@@ -60,7 +95,6 @@ public void ShowGameOver()
         }
     }
 
-
     public void doExitGame()
     {
         Application.Quit();
@@ -71,4 +105,3 @@ public void ShowGameOver()
         totalStrawberriesCollected++;
     }
 }
-

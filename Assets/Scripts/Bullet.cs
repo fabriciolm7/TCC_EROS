@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class HomingBullet : MonoBehaviour
 {
-    public float speed = 6f;          // Velocidade da bala
-    public float rotateSpeed = 300f;  // Velocidade de rotação para mirar no alvo
-    public float lifeTime = 5f;       // Tempo antes de destruir a bala
-
-    private Transform target;         // Referência ao player
+    public float speed = 6f;
+    public float rotateSpeed = 300f;
+    public float lifeTime = 5f;
+    private Transform target;
 
     void Start()
     {
@@ -26,16 +25,13 @@ public class HomingBullet : MonoBehaviour
             return;
         }
 
-        // Direção para o alvo
         Vector2 direction = (Vector2)target.position - (Vector2)transform.position;
         direction.Normalize();
 
-        // Rotação suave para seguir o alvo
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
 
-        // Move o projétil para frente
         transform.position += transform.right * speed * Time.deltaTime;
     }
 
@@ -43,7 +39,18 @@ public class HomingBullet : MonoBehaviour
     {
         if (other.CompareTag("Player1"))
         {
-            // Aqui você pode adicionar dano ao player
+            HealthBarPlayer health = other.GetComponent<HealthBarPlayer>();
+
+            if (health == null)
+            {
+                health = other.GetComponentInChildren<HealthBarPlayer>();
+            }
+
+            if (health != null)
+            {
+                health.TakeDamage(1);
+            }
+
             Destroy(gameObject);
         }
     }

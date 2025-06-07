@@ -7,16 +7,16 @@ public class BossAI : MonoBehaviour
     private Animator anim;
     private AudioSource audioSource;
 
-    public Transform firePoint;      // Ponto de tiro
-    public GameObject bulletPrefab;  // Prefab do proj�til
-    public float fireRate = 1f;      // Tempo entre tiros
-    public AudioClip attackSound;    // Som de ataque
-    public AudioClip destroySound;   // Som de destrui��o
+    public Transform firePoint;      
+    public GameObject bulletPrefab;  
+    public float fireRate = 1f;     
+    public AudioClip attackSound;    
+    public AudioClip destroySound;   
 
     [SerializeField]
     private Transform DetectaChao;
     [SerializeField]
-    private LayerMask bricksLayer;   // Layer das paredes (Bricks)
+    private LayerMask bricksLayer;   
     [SerializeField]
     private float distancia = 3f;
     [SerializeField]
@@ -100,18 +100,29 @@ public class BossAI : MonoBehaviour
         if (other.CompareTag("Player1"))
         {
             isChasing = true;
+
             if (other.transform.position.y > transform.position.y + 0.5f)
             {
-                // Aplica dano ao boss
                 HealthBossScript healthScript = GetComponent<HealthBossScript>();
                 if (healthScript != null)
                 {
-                    anim.SetTrigger("Hit");
-                    anim.Play("boss_hit");
+                    if (anim != null)
+                    {
+                        anim.SetTrigger("Hit");
+                    }
+
                     healthScript.TakeDamage(1);
+
+                    if (hitSound != null)
+                        PlaySound(hitSound);
                 }
 
-                // Dá um impulso vertical no jogador
+                if (GameController.bossCurrentHealth <= 0)
+                {
+                    Destroy(gameObject);
+                    Debug.Log("Boss morreu");
+                }
+
                 Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
                 if (rb != null)
                 {

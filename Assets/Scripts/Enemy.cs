@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour
     public bool playerDestroyed = true;
     public AudioClip destroySound;
     private AudioSource audioSource;
+    private bool isDead = false;
+
     void Start()
     {
         olhandoParaDireita = true;
@@ -80,6 +82,11 @@ public class Enemy : MonoBehaviour
             {
                 rig.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 anim.SetTrigger("die");
+
+                // Impede o inimigo de causar dano novamente
+                GetComponent<Collider2D>().enabled = false;
+                rig.simulated = false;
+
                 Destroy(gameObject, 0.1f);
             }
             else
