@@ -1369,7 +1369,7 @@ PrefabInstance:
     - target: {fileID: 1999770467648406686, guid: 33a1de7b4be762f49a120aefca6be540, type: 3}
       propertyPath: scoreText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 538244049}
     - target: {fileID: 6042231510805233457, guid: 33a1de7b4be762f49a120aefca6be540, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -2461,11 +2461,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799800491}
   m_CullTransparentMesh: 1
---- !u!1 &803106190 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5472878795175155929, guid: 9b51e0ae6a0f7d74dbeb854ecb501981, type: 3}
-  m_PrefabInstance: {fileID: 1705798386}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &893963140
 GameObject:
   m_ObjectHideFlags: 0
@@ -11204,7 +11199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   healthBarFill: {fileID: 2084639475}
-  gameOverPanel: {fileID: 803106190}
+  gameOverPanel: {fileID: 1942491442}
   healthText: {fileID: 116681739}
 --- !u!1 &1212959282
 GameObject:
